@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./css/master.css">
+    
+    <title>Customer</title>
+</head>
+<body class="customers">
+  <div>
+    <div class="ui top attached tabular menu">
+        <a href="./index.html" class="item">Home</a>
+        <a href="" class="active item">Customers</a>
+        <!-- <a class="item">Contacts</a> -->
+        <!-- <div class="right menu">
+            <a class="ui item">Logout</a>
+        </div> -->
+    </div>
+  </div>
+
+    <div class="ui container centered">
+        <!-- <h1>Name: Samriddhi & Senpai</h1> -->
+        <!-- <h3>Net Balance: $<span>1000</span></h3> -->
+        <!-- Error message -->
+        <div id="negative" class="ui negative message" >
+          <i class="close icon"  onclick="cancel('negative')"></i>
+          <div class="header">
+            Low Balance!!
+          </div>
+        </div>
+        <div id="positive" class="ui positive message" >
+          <i class="close icon" onclick="cancel('positive')"></i>
+          <div class="header">
+            Success!! The amount has been transfered
+          </div>
+        </div>
+        <!-- button-upload -->
+          <div class="ui buttons choice">
+            <button class="ui green button " onclick="displayForm()">Send Money</button>
+            <div class="or"></div>
+            <button class="ui blue button" onclick="checkBalance()">Check Balance</button>
+          </div>
+          <!--  for check balance -->
+          <div class="ui segment" id="checkBalance">
+            <h1 class="ui center aligned icon header">
+              <img src="images/profile/male.svg">
+              <br>
+              Hello Alex
+            </h1>
+            <div>
+              <h3>Current Balance: ₹<span id="total">0</span></h3>  
+            </div>
+          </div>
+          <!-- Transfer -->
+          <div class="ui segment" id="transfer">
+            <form class="ui form">
+              <div class="field">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Customer Name</label>
+                    <input id="name" name="to" type="text" placeholder="Enter name here">
+                  </div>
+                  <div class="field">
+                    <label>Amount</label>
+                    <input id="amount" name="amount" type="number" placeholder="Enter Amount">
+                  </div>
+                </div>
+              </div>  
+            </form>
+            <button class="ui inverted green button" onclick="sendData()">Transfer</button>
+            <button class="ui inverted secondary button" onclick="cancel('transfer')">Cancel</button>
+          </div>
+          <!-- Customers -->
+        <table class="ui celled striped table">
+            <thead>
+              <tr><th>Name</th>
+              <th>Email</th>
+              <th>Job</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/male.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td >abcd@gmail.com</td>
+                <td id="user1">50000</td>
+              </tr>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/female.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td data-label="Email">abcd@gmail.com</td>
+                <td id="user2" data-label="Job">50000</td>
+              </tr>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/male.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td data-label="Email">abcd@gmail.com</td>
+                <td id="user3" data-label="Job">50000</td>
+              </tr>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/female.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td data-label="Email">abcd@gmail.com</td>
+                <td id="user4" data-label="Job">50000</td>
+              </tr>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/male.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td data-label="Email">abcd@gmail.com</td>
+                <td id="user5" data-label="Job">50000</td>
+              </tr>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/female.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td data-label="Email">abcd@gmail.com</td>
+                <td id="user6" data-label="Job">50000</td>
+              </tr>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/male.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td data-label="Email">abcd@gmail.com</td>
+                <td id="user7" data-label="Job">50000</td>
+              </tr>
+              <tr>
+                <td data-label="Name">
+                    <h4 class="ui image header">
+                        <img src="./images/profile/female.svg" class="ui mini rounded image">
+                        <div class="content">
+                          Mark
+                        </div>
+                      </div>
+                    </h4>
+                </td>
+                <td data-label="Email">abcd@gmail.com</td>
+                <td id="user8" data-label="Job">50000</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <footer class="ui bottom fixed inverted one item menu footer">
+      <p><b>Made with 💓 by Ritik </b></p>
+    </footer>
+    <script src="js/transfer.js"></script>
+    <!-- <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> -->
+</body>
+</html>
